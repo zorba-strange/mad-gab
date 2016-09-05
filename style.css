@@ -3,13 +3,17 @@ body {
   height: 100vh;
   margin: 0 auto;
   font: 13px Helvetica, Arial;
+  position: fixed;
 }
 
 #guess_form {
   bottom: 0;
   position: fixed;
   width: 100%;
+  margin-left: 2%;
+  margin-bottom: 1%;
 }
+
 #guess_input { 
   border: 0; 
   padding: 10px; 
@@ -17,6 +21,7 @@ body {
   margin-right: .5%; 
   margin-left: 3%;
   margin-bottom: 5px;
+  text-align: right;
 }
 
 #guess_button {
@@ -29,18 +34,21 @@ body {
 }
 
 #guess_box {
-  margin: 0 auto;
+  margin-left: 30%;
   text-align: right;
-  width: 50em;
-  margin-top: -40px;
+  width: 60em;
   background: white;
-  height: 33em;
-  margin-top: 10em;
+  height: 43em;
+  margin-top: 1em;
 }
 
 #user_title {
   border-bottom: 2px solid black;
   margin-left: 1em;
+}
+
+#game_title {
+  margin-left: 5%;
 }
 
 #game_user_form {
@@ -49,4 +57,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: baseline;
+  margin-left: .5%;
+}
+
+#game_options {
+  display: none;
+}
+
+#game_list {
+  display: none;
+}
+
+#game_form{
+  display: none;
 }

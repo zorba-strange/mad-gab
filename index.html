@@ -12,16 +12,25 @@
 </head>
 <body>
   <div data-ng-controller="IndexController as vm">
-    <h1>Mad Gab Game: {{vm.title}}</h1>
+    <h1 id="game_title">Mad Gab Game: {{vm.title}}</h1>
     <div id="game_user_form">
       <form id="user_form">
         <input id="user_input" type="text" data-ng-model="vm.user.name">
-        <button type="button" data-ng-click="vm.userName()">Enter Name</button>
+        <button type="button" data-ng-click="vm.userName()">Choose Name</button>
       </form>
+      <div id="game_options">
+        <button id="new_game" data-ng-click="vm.gameNewShow()">Create Game</button>
+        <button id="join_game" data-ng-click="vm.gameList()">Join Game</button>
+      </div>
       <form id="game_form">
         <input id="game_input" type="text" data-ng-model="vm.game.title">
-        <button type="button" data-ng-click="vm.gameTitle()">Create Game</button>
+        <button type="button" data-ng-click="vm.gameNew()">Create Game</button>
       </form>
+      <div id="game_list">
+        <div data-ng-repeat="game in vm.games">
+        <button type="button" data-ng-click="vim.gameJoin()">{{game}}</button>
+        </div>
+      </div>
       <div id="user_list">
         <h2 id="user_title">Users Online</h2>
         <div data-ng-repeat="user in vm.users">
@@ -35,7 +44,8 @@
       </div>
     </div>
     <form id="guess_form">
-      <input id="guess_input" type="text" data-ng-model="vm.guess">
+      <input id="guess_input" type="text" data-ng-model="vm.guess"
+                                          autocomplete="off"/>
       <button id="guess_button" type="button" data-ng-click="vm.userGuess()">Guess</button>
     </form>
   </div>
